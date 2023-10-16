@@ -18,12 +18,12 @@ public struct DependencyExtensionMacro: DeclarationMacro {
         
         let resultString = 
 """
-public extension \(str): DependencyKey {
-    public static let liveValue: \(str) = .init()
+extension \(str): DependencyKey {
+    static let liveValue: \(str) = .init()
 }
 
-public extension DependencyValues {
-    public var \(str): \(str) {
+extension DependencyValues {
+    var \(str)V: \(str) {
         get { self[\(str).self] }
         set { self[\(str).self] = newValue }
     }
